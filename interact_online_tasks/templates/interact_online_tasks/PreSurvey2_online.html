@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario 2
+{% endblock %}
+
+{% block content %}
+<ul style="list-style-type:disc">
+<li> Quale è il tuo stato civile? {% formfield player.married with label="" %}  </li>
+
+<li> Quante persone vivono in casa con te? {% formfield player.household with label="" %} </li>
+
+<li> Hai dei figli? {% formfield player.children with label="" %} </li>
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario 3
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Considera la seguente situazione. Hai perso il tuo portafogli mentre sei
+in stazione Centrale a Milano.</br>
+Il portafogli contiene 200 Euro e varie carte.
+   Qualcuno lo trova e vede la tua identità.</br>
+<b>Cosa pensi che faccia questa persona?
+Pensi sia probabile che te lo restituisca? </br></b>
+{% formfield player.wallet with label="" %} </li>
+
+<li> In generale, sei una persona che ama correre rischi o no? </li>
+  <input type="radio" name="dec_risk" value="0"/>
+  <label for="1"> No, 0 &emsp; </label>
+  <input type="radio" name="dec_risk" value="1"/>
+  <label for="1">1 &emsp; </label>
+  <input type="radio" name="dec_risk" value="2"/>
+  <label for="2">2 &emsp; </label>
+  <input type="radio" name="dec_risk" value="3"/>
+  <label for="3">3 &emsp; </label>
+  <input type="radio" name="dec_risk" value="4"/>
+  <label for="4">4 &emsp; </label>
+  <input type="radio" name="dec_risk" value="5"/>
+  <label for="5">5 &emsp; </label>
+  <input type="radio" name="dec_risk" value="6"/>
+  <label for="6">6 &emsp; </label>
+  <input type="radio" name="dec_risk" value="7">
+  <label for="7">7 &emsp; </label>
+  <input type="radio" name="dec_risk" value="8"/>
+  <label for="8">8 &emsp; </label>
+  <input type="radio" name="dec_risk" value="9"/>
+  <label for="9">9 &emsp; </label>
+  <input type="radio" name="dec_risk" value="10"/>
+  <label for="10"> Si, 10 </label>
+
+{{ form.dec_risk.errors }}
+
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

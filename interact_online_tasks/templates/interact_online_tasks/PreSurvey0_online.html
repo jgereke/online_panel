@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario 1
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li>  In quale regione? {% formfield player.region with label="" %} </li>
+</ul>
+
+<p><br></p>
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}
+
+{% block scripts %}
+
+<!-- <script>
+
+$(function() {
+  if($( "#id_born" ).val()==2){
+    $( "#id_region" ).show();
+  }else{
+    $( "#id_region" ).hide();
+  }
+  $( "#id_born" ).change(function() {
+      if($( "#id_born" ).val()==2){
+        $( "#id_region" ).show();
+      }else{
+        $( "#id_region" ).hide();
+      }
+  });
+}); -->
+
+</script>
+
+{% endblock %}

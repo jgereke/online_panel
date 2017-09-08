@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario - Discriminazione
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Negli ultimi 12 mesi ti sei sentito discriminato o trattano diversamente </br>
+  per il colore della tua pelle, la tua etnia, cultura, religione, lingua o accento?
+  {% formfield player.discrim with label="" %}</li>
+
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

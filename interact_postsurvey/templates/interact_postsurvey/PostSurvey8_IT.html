@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario Conclusione
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Conosci qualcuno che aveva già partecipato a questa attività?
+  {% formfield player.knowingsomeone with label="" %}</li>
+
+<li> Conosci qualcuna delle persone presenti oggi?
+    {% formfield player.ingroupknowledge with label="" %}</li>
+
+<li> In generale, è stato difficile capire le attività di oggi?
+{% formfield player.difficult with label="" %}</li>
+
+<li> Saresti disponibile a partecipare ancora a questa ricerca? </br>
+Se sì, per favore lascia la tua email o numero di telefono qui:
+{% formfield player.contact with label="" %} </li>
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

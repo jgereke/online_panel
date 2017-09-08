@@ -1,0 +1,75 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+
+    <style type="text/css">
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 100%;
+    text-align: center;
+    }
+    </style>
+
+{% endblock %}
+
+{% block title %}
+    Attività  5
+{% endblock %}
+
+{% block content %}
+
+
+<p> Per questa attività sei in coppia con {{threat_name}}, che vive a Milano, è {% if threat_gen == "He" %} nato {% else %} nata {% endif %}
+  in {{threat_place}}, ed ha {{threat_age}} anni.
+</p>
+
+<p>Decidi se vuoi scegliere di investire in protezione o no.</p>
+
+{% formfield player.dec_threat with label=""%}
+
+<p><br></p>
+<details style="font-size:100%">
+    <summary style="outline:none"> <b>Clicca qui se vuoi leggere nuovamente le istruzioni.</b></summary>
+    <p> In questa attività puoi guadagnare o perdere punti. Anche in questo caso sarai
+      in coppia con un’altra persona che chiameremo Z.</p>
+
+    <p> Sia tu che Z avete ricevuto 5 punti ciascuno. </p>
+
+    <p>L’altra persona, Z, ha la possibilità di tenere i 5 punti e non fare altro,
+      oppure ha la possibilità di prendersi anche i tuoi 5 punti. In quest’ultimo caso
+      Z si prende un totale di 10 punti.
+    </p>
+
+    <p> Se Z decide di prendere i tuoi punti, tu subirai un danno di 8 punti,
+      concludendo a -3 punti. Toglieremo questi punti dai tuoi guadagni precedenti.
+      Z è consapevole delle conseguenze della sua decisione.  </p>
+
+      <p> Tu non puoi prendere punti da Z, ma puoi decidere di spendere i tuoi 5 punti
+        per proteggerti da Z. Se tu decidi di usare i tuoi 5 punti per proteggerti,
+        Z non ti puo’ prendere punti, ma tu finisci con 0 punti, sia che Z provi a prendere
+        da te o no.
+      </p>
+
+      <p> Se tu decidi di non proteggerti da Z, puoi guadagnare 5 punti nel caso Z decida
+         di non prendere da te, o puoi perdere 3 punti nel caso Z prenda da te.
+       </p>
+
+</details>
+
+<p><br></p>
+ <table class="table-condensed table-hover" style="width:500px; margin-top:0px; text-align: center;">
+     <tr><td><b> {{threat_name}} </b></td> <td><b> Tu </b> </td> <td> <b> {{threat_name}} guadagna </b></td> <td><b>Tu guadagni</b></td> </tr>
+     <tr><td> Prende </td> <td> Non protetto </td> <td> 10 punti </td> <td> -3 punti </td></tr>
+     <tr><td> Non prende </td> <td> Non protetto </td> <td> 5 punti </td> <td> 5 punti </td></tr>
+     <tr><td> Prende </td> <td> Protetto </td> <td> 5 punti </td> <td> 0 punti </td></tr>
+     <tr><td> Non prende </td> <td> Protetto </td> <td> 5 punti </td> <td> 0 punti </td></tr>
+</table>
+<p><br></p>
+
+    {% next_button %}
+
+
+
+{% endblock %}

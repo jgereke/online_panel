@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario 1
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li>  In quale nazione sei nato/a?  {% formfield player.country with label="" %} </li>
+
+<li>  Da quanti anni vivi in Italia? {% formfield player.time_in_italy with label="" %} </li>
+
+<li>  Hai la cittadinanza Italiana?  {% formfield player.citizenship with label="" %} </li>
+
+<li>  Quale lingua parli prevalentemente a casa? {% formfield player.language with label="" %} </li>
+
+<li>  Conosci bene la lingua italiana? {% formfield player.italian_knowledge with label="" %}  </li>
+</ul>
+
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

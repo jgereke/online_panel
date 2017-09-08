@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario Network Sociali
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Quanti dei tuoi amici non sono italiani? </br>
+  <small><i> [Per amici intendiamo “persone che non fanno parte della tua famiglia con cui discuti di cose importanti </br>
+   e di cui ti fidi.”] </i></small>
+  {% formfield player.friendsimm with label="" %}</li>
+
+<li> Quante persone conosci che sono immigrati? </br>
+  <small><i> [Per conoscenti intendiamo “persone del tuo quartiere che conosci per nome e </br>
+    con le quali scambi due chiacchiere ogni tanto.”] </i></small>
+    {% formfield player.aquaintnonit with label="" %}</li>
+
+<li> Quanto spesso ti capita di incontrare immigrati quando frequenti bar, </br>ristoranti,
+  negozi, parchi o spazi pubblici nel tuo quartiere?
+  {% formfield player.meetimm with label="" %}</li>
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

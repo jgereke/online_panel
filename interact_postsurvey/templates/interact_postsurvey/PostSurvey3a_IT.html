@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario Associazionismo
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Le nominerò ora alcuni tipi di associazioni e organizzazioni.</br>
+Per ciascuna di queste può dirmi se è iscritto,</br>
+o se ne fa parte o se partecipa alle sue attività?</li>
+<b>Volontariato</b> {% formfield player.dec_asso1 with label="" %}
+<b>Religiose</b> {% formfield player.dec_asso2 with label="" %}
+<b>Sportive o ricreative</b> {% formfield player.dec_asso3 with label="" %}
+<b>Culturali</b> {% formfield player.dec_asso4 with label="" %}
+<b>Ambientaliste</b> {% formfield player.dec_asso5 with label="" %}
+<b>Cooperazione internazionale o difesa dei diritti umani</b> {% formfield player.dec_asso6 with label="" %}
+<b>Sindacali, professionali o di categoria</b> {% formfield player.dec_asso7 with label="" %}
+<b>Movimenti o partiti politici</b> {% formfield player.dec_asso8 with label="" %}
+
+</ul>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

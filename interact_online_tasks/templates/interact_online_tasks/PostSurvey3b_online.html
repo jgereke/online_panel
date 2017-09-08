@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario Network Sociali
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Alcune persone hanno avuto esperienze spiacevoli con gli immigrati, altre invece no. </br>
+  A te è mai successo? Quanto spesso hai avuto esperienze negative con immigrati?
+{% formfield player.negcontact with label="" %} </li>
+
+<li> Quanti dei tuoi colleghi di lavoro sono immigrati?
+  {% formfield player.colleagues with label="" %} </li>
+
+
+<li> Hai o hai avute persone immigrate che lavorano per te o per la tua famiglia, </br>
+  ad esempio come badanti, baby-sitter, addetti alla pulizia ecc.?
+  {% formfield player.employimm with label="" %} </li>
+
+</ul>
+
+<p><br></p>
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

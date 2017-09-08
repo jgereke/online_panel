@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario - Attitudini verso gli immigrati
+{% endblock %}
+
+{% block content %}
+
+ <p>Ecco alcune affermazioni sugli immigrati. Per ogni affermazione riporta quanto sei d’accordo. </br>
+  <b> Se molto, abbastanza, poco o per niente d’accordo.</b></p>
+
+<ul style="list-style-type:disc">
+<li> Gli immigrati commettono più crimini degli italiani.
+  {% formfield player.attimm1 with label="" %}</li>
+
+<li> Gli immigrati imparano abbastanza rapidamente l’Italiano.
+  {% formfield player.attimm2 with label="" %}</li>
+
+<li> Gli immigrati hanno tassi di disoccupazione più alti degli italiani.
+  {% formfield player.attimm3 with label="" %}</li>
+
+<li>	Gli immigrati ricevono più servizi e aiuti dallo stato degli italiani.
+  {% formfield player.attimm4 with label="" %}</li>
+
+<li>	Gli immigrati hanno più voglia di lavorare degli italiani.
+  {% formfield player.attimm5 with label="" %}</li>
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

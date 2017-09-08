@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+
+    <style type="text/css">
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 100%;
+    text-align: center;
+    }
+    </style>
+
+{% endblock %}
+
+
+{% block title %}
+    Attività  5B - Istruzioni
+{% endblock %}
+
+
+{% block content %}
+<p> Tu non puoi prendere punti da Z, ma puoi decidere di spendere i tuoi 5 punti
+  per proteggerti da Z. Se tu decidi di usare i tuoi 5 punti per proteggerti,
+  Z non ti può prendere punti, ma tu finisci con 0 punti, sia che Z provi a prendere
+  da te o no.
+</p>
+
+<p> Se tu decidi di non proteggerti da Z, puoi guadagnare 5 punti nel caso Z decida
+   di non prendere da te, o puoi perdere 3 punti nel caso Z prenda da te.
+ </p>
+
+<p> Le tue opzioni sono riassunte nella tabella.
+ </p>
+
+<p><br></p>
+ <table class="table-condensed table-hover" style="width:400px; margin-top:0px; text-align: center;">
+     <tr><td><b>  Z  </b></td> <td><b> Tu </b> </td> <td> <b> Z guadagna </b></td> <td><b>Tu guadagni</b></td> </tr>
+     <tr><td> Prende </td> <td> Non protetto </td> <td> 10 punti </td> <td> -3 punti </td></tr>
+     <tr><td> Non prende </td> <td> Non protetto </td> <td> 5 punti </td> <td> 5 punti </td></tr>
+     <tr><td> Prende </td> <td> Protetto </td> <td> 5 punti </td> <td> 0 punti </td></tr>
+     <tr><td> Non prende </td> <td> Protetto </td> <td> 5 punti </td> <td> 0 punti </td></tr>
+</table>
+<p><br></p>
+
+    {% next_button %}
+
+{% endblock %}

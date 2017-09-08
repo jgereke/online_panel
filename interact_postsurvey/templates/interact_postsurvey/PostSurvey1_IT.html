@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+Questionario Status economico
+
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> La casa in cui abiti {% formfield player.accomodation with label="" %} </li>
+
+<li>	Durante l’anno passato (2016), la tua famiglia ha: <br />
+  {% formfield player.savings with label="" %} </li>
+
+<li>	La gente a volte si descrive come parte della classe lavoratrice, della
+  classe media o della classe alta o di quella bassa.<br />
+  Tu di descriveresti come appartenente alla:
+ {% formfield player.socialclass with label="" %} </li>
+
+<li> In quale fascia di reddito si trova la tua famiglia contando tutti i redditi
+  da lavoro, i salari, le pensioni ed altre forme di reddito di cui la famiglia dispone?
+  {% formfield player.income with label="" %} </li>
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

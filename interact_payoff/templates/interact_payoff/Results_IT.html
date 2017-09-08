@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Riassunto totale
+{% endblock %}
+
+{% block content %}
+
+<p> Ecco un riassunto generale dei tuoi guadagni di oggi:</p>
+
+<p>Attività individuale: {{player.payoff_individual_task}}</p>
+<p>Attività di gruppo: {{player.payoff_pgg}}</p>
+<p>TOTALE: {{player.payoff}}</p>
+
+<p><b>Verrai pagato in contanti all'uscita.</b></p>
+
+<p><b>Grazie ancora per la tua partecipazione.</b></p>
+
+    {% next_button %}
+{% endblock %}

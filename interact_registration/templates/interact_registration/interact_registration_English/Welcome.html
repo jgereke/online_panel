@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block content %}
+
+<p>This study is part of a research project led by Bocconi University and financed by the
+European Commission. The goal of this study is to understand how residents of Milan make
+    decisions. All participants in this room currently live in the city of Milan. </p>
+
+<p>There are 5 activities that you will participate in today:
+    1) a short survey, 2) individual tasks, 3) a group task, 4) individual task, 5) a short survey. </p>
+
+<p> For coming today, you have already earned 15€. You will be able to earn an additional 10
+to 25€ depending on your choices and the choices of other participants in the different
+activities today. In sum, by the end of our activities today you will earn between 25 and 40
+EUR. We will pay you in private at the end of today’s activities. </p>
+
+
+<font color="red">INFORMED CONSENT (…) error to proceed? </font>
+
+
+    {% next_button %}
+
+{% endblock %}

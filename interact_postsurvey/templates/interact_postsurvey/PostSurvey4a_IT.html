@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+
+    <style type="text/css">
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 100%;
+    text-align: center;
+    }
+    </style>
+
+{% endblock %}
+
+{% block title %}
+Questionario Partecipazione politica
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li>  In generale, ti interessi di politica:
+{% formfield player.politics with label="" %}</li>
+
+
+<li> Molta gente quando parla di politica usa i termini “sinistra” e “destra”.<br>
+Ecco qui in questo cartellino una fila di caselle che vanno da sinistra
+a destra.
+
+Pensando alle sue opinioni politiche, lei in quale casella si collocherebbe?
+
+ <table style="width:400px; margin-top:10px; margin-bottom:10px; text-align: center;">
+    <tr><td width="100px"> <small>Sinistra</small> </td> <td width="100px" > <small>Centro Sinistra</small> </td> <td width="100px"> <small>Centro </small></td> <td width="100px"> <small>Centro Destra </small></td> <td width="100px"> <small>Destra</small> </td></tr>
+    <tr><td>  1 &nbsp &nbsp 2 </td> <td> 3 &nbsp &nbsp 4 </td> <td> 5 &nbsp &nbsp 6 </td> <td> 7 &nbsp &nbsp 8 </td> <td> 9 &nbsp &nbsp10 </td></tr>
+    </table>
+  </li>
+    {% formfield player.rightleft with label="" %}
+
+</ul>
+
+<p><br></p>
+    {% next_button %}
+
+<p><br></p>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario - Discriminazione
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+
+<li>	Quanto spesso ritieni di essere discriminato?
+  {% formfield player.discrimfreq with label="" %}</li>
+
+<li>	In quali situazioni o posti sei stato discriminato o trattato diversamente in Italia?
+  {% formfield player.discrimtype with label="" %}</li>
+
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

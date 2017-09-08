@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario - Remittances
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+
+<li> Negli ultimi 12 mesi hai mandato soldi o beni a parenti e amici che vivono fuori dall’Italia?
+  {% formfield player.remit with label="" %}</li>
+
+<li>	Quale è il totale in Euro dei soldi e beni che hai mandato negli ultimi 12 mesi (valore approssimativo)?
+  {% formfield player.remitamount with label="" %}</li>
+
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

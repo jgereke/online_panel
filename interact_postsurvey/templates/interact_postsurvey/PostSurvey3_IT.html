@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Pensi che gran parte della gente del tuo
+  quartiere, se ne avesse l’opportunità, approfitterebbe di te o pensi
+  che sarebbe in ogni caso corretta nei tuoi confronti?
+{% formfield player.takenadvantage with label="" %}</li>
+
+<li> Ecco una lista di vari tipi di persone. Puoi dirmi quali di questi <b>non
+  vorresti avere come vicini di casa</b>?</li>
+</br>
+Criminali e spacciatori {% formfield player.neighbor1 with label="" %}
+Single {% formfield player.neighbor2 with label="" %}
+Persone con famiglie numerose {% formfield player.neighbor3 with label="" %}
+Omosessuali, gay, lesbiche, trans {% formfield player.neighbor4 with label="" %}
+Persone che parlano una lingua diversa dall’italiano{% formfield player.neighbor5 with label="" %}
+Estremisti politici {% formfield player.neighbor6 with label="" %}
+Studenti {% formfield player.neighbor7 with label="" %}
+Prostitute {% formfield player.neighbor8 with label="" %}
+Proprietari di cani {% formfield player.neighbor9 with label="" %}
+Persone di gruppi etnici diversi dal mio {% formfield player.neighbor10 with label="" %}
+Alcolizzati e drogati {% formfield player.neighbor11 with label="" %}
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+
+    <style type="text/css">
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 100%;
+    text-align: center;
+    }
+    </style>
+
+{% endblock %}
+
+{% block title %}
+Questionario Partecipazione politica
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+
+<li> Hai votato nell’ultimo referendum nazionale nel 2016?
+    {% formfield player.referendum with label="" %} </li>
+
+</ul>
+
+<p><br></p>
+    {% next_button %}
+
+<p><br></p>
+
+{% endblock %}

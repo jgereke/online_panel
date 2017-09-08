@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario Network Sociali
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+
+<li> Quale è la loro nazione di origine?<i><small> [molteplici risposte possibili]</i></small>
+  {% formfield player.employimmnationality with label="" %} </li>
+
+</ul>
+
+<p><br></p>
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

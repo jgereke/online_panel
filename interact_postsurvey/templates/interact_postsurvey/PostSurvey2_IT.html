@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario Religione
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> A quale religione appartieni? {% formfield player.religion with label="" %} </li>
+
+<li> Escluse le cerimonie (come matrimoni e funerali) con quale
+  frequenza partecipi a funzioni religiose?
+  {% formfield player.religiosity with label="" %} </li>
+</ul>
+
+<p><br></p>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

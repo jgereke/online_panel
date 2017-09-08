@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Questionario Network Sociali
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Quanti dei tuoi amici sono italiani? </br>
+  <small><i>[Per amici intendiamo “persone che non fanno parte della tua famiglia con cui discuti di cose importanti </br>
+   e di cui ti fidi.”] </i></small>
+  {% formfield player.friendsit with label="" %}</li>
+
+<li> Quante persone conosci che sono italiani? </br>
+    <small><i>[Per conoscenti intendiamo “persone del tuo quartiere che conosci per nome e </br>
+    con le quali scambi due chiacchiere ogni tanto.”] </i></small>
+    {% formfield player.aquaintit with label="" %}</li>
+
+<li>	Il tuo datore di lavoro è italiano?
+      {% formfield player.employital with label="" %}</li>
+</ul>
+
+<p><br></p>
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Attività  5A - Istruzioni
+{% endblock %}
+
+{% block content %}
+
+<p> In questa attività puoi guadagnare o perdere punti. Anche in questo caso sarai
+  in coppia con un’altra persona che chiameremo Z.</p>
+
+<p> Sia tu che Z avete ricevuto 5 punti ciascuno. </p>
+
+<p>L’altra persona, Z, ha la possibilità di tenere i 5 punti e non fare altro,
+  oppure ha la possibilità di prendersi anche i tuoi 5 punti. In quest’ultimo caso
+  Z si prende un totale di 10 punti.
+</p>
+
+<p> Se Z decide di prendere i tuoi punti, tu subirai un danno di 8 punti,
+  concludendo a -3 punti. Toglieremo questi punti dai tuoi guadagni precedenti.
+  Z è consapevole delle conseguenze della sua decisione.
+</p>
+
+<p><br></p>
+
+    {% next_button %}
+
+{% endblock %}

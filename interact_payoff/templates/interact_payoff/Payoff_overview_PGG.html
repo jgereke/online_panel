@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+
+<style type="text/css">
+table, th, td {
+border: 1px solid black;
+border-collapse: collapse;
+font-size: 100%;
+text-align: center;
+}
+</style>
+
+{% endblock %}
+
+
+{% block title %}
+Riassunto attività gruppo 1
+{% endblock %}
+
+
+{% block content %}
+
+<p></p>
+<p></p>
+
+<p> Le tue decisioni e potenziali guadagni nella prima attività di gruppo sono le seguenti: </p>
+ <table class="table-condensed table-hover" style=" margin-top:0px; text-align: left;">
+     <tr><td><b> Sessione </b></td> <td> <b> Il tuo guadagno </b></td> <td><b>Numero di riferimento per lancio dadi</b></td> </tr>
+     <tr><td> Sessione 1 </td> <td> {{ pgg_1 }} </td> <td> 1 </td></tr>
+     <tr><td> Sessione 2 </td> <td> {{ pgg_2 }} </td> <td> 2 </td></tr>
+     <tr><td> Sessione 3 </td> <td> {{ pgg_3 }} </td> <td> 3 </td></tr>
+     <tr><td> Sessione 4 </td> <td> {{ pgg_4 }} </td> <td> 4 </td></tr>
+     <!-- <tr><td> Sessione 5 </td> <td> {{ pgg_5 }} </td> <td> 5 </td></tr>
+     <tr><td> Sessione 6 </td> <td> {{ pgg_6 }} </td> <td> 6 </td></tr>
+     <tr><td> Sessione 7 </td> <td> {{ pgg_7 }} </td> <td> 7 </td></tr>
+     <tr><td> Sessione 8 </td> <td> {{ pgg_8 }} </td> <td> 8 </td></tr> -->
+</table>
+
+<p> <br><br></p>
+
+
+
+<p> Ora lanceremo i dadi per determinare la sessione per cui verrete pagati.</p>
+{% formfield player.paid_pgg with label=""%}
+
+
+    {% next_button %}
+
+{% endblock %}

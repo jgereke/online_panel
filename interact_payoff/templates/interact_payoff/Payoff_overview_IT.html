@@ -1,0 +1,52 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+
+<style type="text/css">
+table, th, td {
+border: 1px solid black;
+border-collapse: collapse;
+font-size: 100%;
+text-align: center;
+}
+</style>
+
+{% endblock %}
+
+
+{% block title %}
+     Riassunto attività individuali
+{% endblock %}
+
+
+{% block content %}
+
+<p></p>
+<p></p>
+
+<p> Le tue decisioni e potenziali guadagni nelle attività individuali sono le seguenti: </p>
+<table class="table-condensed table-hover" style=" margin-top:0px; text-align: left;">
+    <tr><td><b> Attività </b></td> <td><b> La tua decisione </b> </td> <td> <b> Il tuo guadagno sarebbe </b></td> <td><b>Numero di riferimento per lancio dadi</b></td> </tr>
+    <tr><td> 1A </td> <td> Hai tenuto {{ dec_dg1 }}€.</td> <td> {{ po_dg1 }} </td> <td> 1 </td></tr>
+    <tr><td> 1B </td> <td> Hai tenuto {{ dec_dg2 }}€.</td> <td> {{ po_dg2}} </td> <td> 2 </td></tr>
+    <tr><td> 2  </td> <td> Hai scelto di {{ dec_svoc }}.</td> <td> {{ po_svoc }} </td> <td> 3 </td></tr>
+    <tr><td> 3A </td> <td> Hai scelto di {{ dec_svonc }}.</td> <td> {{ po_svonc }} </td> <td> 4 </td></tr>
+    <tr><td> 3B  </td> <td> Hai risposto che l'altro partecipante avrebbe deciso di {{ dec_pdguess }}.</td> <td> {{ po_pdguess }} </td> <td> 5 </td></tr>
+    <tr><td> 3C </td> <td> Hai scelto di {{ dec_pd1 }}.</td> <td> {{ po_pd1 }} </td> <td> 6 </td></tr>
+    <tr><td> 3D </td> <td> Hai scelto di {{ dec_pd2 }}.</td> <td> {{ po_pd2 }} </td> <td> 7 </td></tr>
+    <tr><td> 3E </td> <td> Hai inviato {{ dec_trustjob }}€.</td> <td> {{ po_trustjob }} </td> <td> 8 </td></tr>
+    <tr><td> 4  </td> <td> Hai inviato {{ dec_trustactivity }}€.</td> <td> {{ po_trustact }} </td> <td> 9 </td></tr>
+    <tr><td> 5   </td> <td> Hai scelto {{ dec_threat }}.</td> <td> {{ po_threat }} </td> <td> 10 </td></tr>
+    <tr><td> 6   </td> <td> Hai tenuto {{ dec_donate1 }}€ per te.</td> <td> {{ po_donation }} </td> <td> 11 </td></tr>
+</table>
+
+<p> <br><br></p>
+
+<p> Ora lanceremo i dadi per determinare l' attività per cui verrete pagati.</p>
+{% formfield player.paid_individual_task with label=""%}
+
+
+    {% next_button %}
+
+{% endblock %}
