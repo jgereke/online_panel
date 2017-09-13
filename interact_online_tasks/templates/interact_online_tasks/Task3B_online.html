@@ -20,7 +20,7 @@
 {% block content %}
 
 <p> Sei sempre in coppia con {{pd_name1}}, che vive a Milano, è {% if pd_gen1 == "He" %}
-  nato {% else %} nata {% endif %} in {{pd_place1}}, ed ha {{pd_age1}} anni. </p>
+  nato {% else %} nata {% endif %} {{pd_place1}}, ed ha {{pd_age1}} anni. </p>
 
 <p> Ora decidi cosa fare:  </p>
 {% formfield player.dec_pd1 with label=""%}
