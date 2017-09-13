@@ -357,7 +357,7 @@ class Player(BasePlayer):
     dec_trustcheckact = models.PositiveIntegerField(min=0 )
     dec_trustestimact = models.PositiveIntegerField(min= 0)
     dec_threat = models.CharField(choices=['Protetto', 'Non protetto'], widget=widgets.RadioSelect())
-    dec_picknumber = models.PositiveIntegerField(min=0, max=10)
+    dec_picknumber = models.PositiveIntegerField(min=1, max=10)
 
     #Payoff
     po_dg1 = models.CurrencyField()

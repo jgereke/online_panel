@@ -7,268 +7,6 @@ import time
 from datetime import datetime, timedelta
 from django.utils.timezone import activate
 
-
-## ENGLISH VERSION
-
-class Task1_instructions(Page):
-
-    def before_next_page(self):
-        self.player.random_var()
-
-class Task1_A(Page):
-
-    form_model = models.Player
-    form_fields = ['dec_dg1']
-
-    #if html input: error message not displayed
-    def error_message(self, values):
-        if values['dec_dg1'] > 10 or values['dec_dg1']< 0:
-            return 'Controlla la tua risposta: deve essere maggiore di 0 e minore di 10.'
-
-    def vars_for_template(self):
-        return {
-            'dg_name1': Constants.dg_name1[self.player.id_profile],
-            'dg_gen1':  Constants.dg_gen1[self.player.id_profile],
-            'dg_age1':  Constants.dg_age1[self.player.id_profile],
-            'dg_place1': Constants.dg_place1[self.player.id_profile]
-        }
-
-    def before_next_page(self):
-        self.player.def_po_pdg1()
-
-class Task1_B(Page):
-
-    form_model = models.Player
-    form_fields = ['dec_dg2']
-
-    def error_message(self, values):
-        if values['dec_dg2'] > 10 or values['dec_dg2']< 0:
-            return 'Controlla la tua risposta: deve essere maggiore di 0 e minore di 10.'
-
-    def vars_for_template(self):
-        return {
-            'dg_name2': Constants.dg_name2[self.player.id_profile],
-            'dg_gen2': Constants.dg_gen2[self.player.id_profile],
-            'dg_age2': Constants.dg_age2[self.player.id_profile],
-            'dg_place2': Constants.dg_place2[self.player.id_profile]
-        }
-
-    def before_next_page(self):
-        self.player.def_po_pdg2()
-
-class Task2_instructions(Page):
-    pass
-
-class Task2(Page):
-    form_model = models.Player
-    form_fields = ['dec_svoc', 'dec_svonc']
-
-    def before_next_page(self):
-        self.player.def_po_svo()
-
-class Task3_instructions(Page):
-    pass
-
-class Task3_choice(Page):
-    form_model = models.Player
-    form_fields = ['dec_pdguess','dec_pdcertain']
-
-    def vars_for_template(self):
-        return {
-            'pd_name1': Constants.pd_name1[self.player.id_profile],
-            'pd_gen1': Constants.pd_gen1[self.player.id_profile],
-            'pd_age1': Constants.pd_age1[self.player.id_profile],
-            'pd_place1': Constants.pd_place1[self.player.id_profile]
-        }
-
-    def before_next_page(self):
-        self.player.def_po_pdguess()
-
-# class Task3_guess(Page):
-#     form_model = models.Player
-#     form_fields = ['dec_pdcertain']
-
-class Task4(Page):
-    form_model = models.Player
-    form_fields = ['dec_pd1']
-
-    def vars_for_template(self):
-        return {
-            'pd_name1': Constants.pd_name1[self.player.id_profile],
-            'pd_gen1': Constants.pd_gen1[self.player.id_profile],
-            'pd_age1': Constants.pd_age1[self.player.id_profile],
-            'pd_place1': Constants.pd_place1[self.player.id_profile]
-        }
-
-    def before_next_page(self):
-        self.player.def_po_pd1()
-
-class Task5(Page):
-    form_model = models.Player
-    form_fields = ['dec_infosell']
-
-    def vars_for_template(self):
-        return {
-            'pd_name1': Constants.pd_name1[self.player.id_profile],
-            'pd_gen1': Constants.pd_gen1[self.player.id_profile],
-            'pd_age1': Constants.pd_age1[self.player.id_profile],
-            'pd_place1': Constants.pd_place1[self.player.id_profile]
-        }
-
-    def before_next_page(self):
-        self.player.po_infosell = -float(Constants.pd_infosell) if self.player.dec_infosell=="Si" else 0
-
-
-class Task6_a1(Page):
-    form_model = models.Player
-    form_fields = ['dec_infobuy']
-
-    def vars_for_template(self):
-        return {
-            'pd_name2': Constants.pd_name2[self.player.id_profile],
-            'pd_gen2': Constants.pd_gen2[self.player.id_profile],
-            'pd_age2': Constants.pd_age2[self.player.id_profile],
-            'pd_place2': Constants.pd_place2[self.player.id_profile]
-        }
-
-    def before_next_page(self):
-        self.player.def_po_infobuy()
-
-class Task6_a2(Page):
-    form_model = models.Player
-    form_fields = ['dec_pd2']
-
-    def vars_for_template(self):
-        return {
-            'pd_name2': Constants.pd_name2[self.player.id_profile],
-            'pd_gen2': Constants.pd_gen2[self.player.id_profile],
-            'pd_age2': Constants.pd_age2[self.player.id_profile],
-            'pd_place2': Constants.pd_place1[self.player.id_profile],
-            'pd_altdec2': Constants.pd_altdec2[self.player.id_profile],
-        }
-
-    def before_next_page(self):
-        self.player.def_po_infobuy(),
-        self.player.def_po_pd2()
-
-
-class Task6_b1_instructions(Page):
-    pass
-
-
-
-class Task6_b2(Page):
-    form_model = models.Player
-    form_fields = ['dec_trustjob']
-
-    def vars_for_template(self):
-        return {
-            'trust_name1': Constants.trust_name1[self.player.id_profile],
-            'trust_gen1': Constants.trust_gen1[self.player.id_profile],
-            'trust_age1': Constants.trust_age1[self.player.id_profile],
-            'trust_place1': Constants.trust_place1[self.player.id_profile],
-            'trust_job': Constants.trust_job[self.player.id_profile],
-        }
-
-    def before_next_page(self):
-        self.player.po_trustjob = (10-float(self.player.dec_trustjob)) + float(self.player.dec_trustjob)*3*float(Constants.trust_altdec1[self.player.id_profile])
-
-
-class Task6_b3(Page):
-    form_model = models.Player
-    form_fields = ['dec_trustcheckjob','dec_trustestimjob']
-
-    def vars_for_template(self):
-        return {
-            'trust_name1': Constants.trust_name1[self.player.id_profile],
-            'trust_gen1': Constants.trust_gen1[self.player.id_profile],
-            'dec_trustjob': self.player.dec_trustjob,
-        }
-
-
-class Task6_c1(Page):
-    form_model = models.Player
-    form_fields = ['dec_trustactivity']
-
-    def vars_for_template(self):
-        return {
-            'trust_name2': Constants.trust_name2[self.player.id_profile],
-            'trust_gen2': Constants.trust_gen2[self.player.id_profile],
-            'trust_age2': Constants.trust_age2[self.player.id_profile],
-            'trust_place2': Constants.trust_place2[self.player.id_profile],
-            'trust_activity': Constants.trust_activity[self.player.id_profile],
-        }
-
-    def before_next_page(self):
-        self.player.po_trustact = (10-float(self.player.dec_trustactivity)) + float(self.player.dec_trustactivity)*3*float(Constants.trust_altdec2[self.player.id_profile])
-
-
-class Task6_c2(Page):
-    form_model = models.Player
-    form_fields = ['dec_trustcheckact','dec_trustestimact']
-
-    def vars_for_template(self):
-        return {
-            'trust_name2': Constants.trust_name2[self.player.id_profile],
-            'trust_gen2': Constants.trust_gen2[self.player.id_profile],
-            'dec_trustactivity': self.player.dec_trustactivity,
-        }
-
-
-class Task7_instructionsA(Page):
-    pass
-
-class Task7_instructionsB(Page):
-    pass
-
-class Task7(Page):
-    form_model = models.Player
-    form_fields = ['dec_threat']
-
-    def vars_for_template(self):
-        return {
-            'threat_name': Constants.threat_name[self.player.id_profile],
-            'threat_gen': Constants.threat_gen[self.player.id_profile],
-            'threat_age': Constants.threat_age[self.player.id_profile],
-            'threat_place': Constants.threat_place[self.player.id_profile]
-        }
-
-    def before_next_page(self):
-        self.player.def_po_threat()
-
-
-class Payoff_overview(Page):
-    pass
-
-
-
-## ITALIAN VERSION
-
-# def preselection_im():
-#     if self.participant.vars['id_born'] == 3:
-#         return True
-#     else:
-#         return False
-#
-# def preselection_online():
-#     if self.participant.vars['id_born'] != 3:
-#         return True
-#     else:
-#         return False
-#
-# def preselection_onlinenotmilan():
-#     if self.participant.vars['id_born'] == 2:
-#         return True
-#     else:
-#         return False
-
-# def preselection_children():
-#     if player.children!=1:
-#         return True
-#     else:
-#         return False
-
-
 class PreSurvey1_online(Page):
     form_model = models.Player
     form_fields = ['city', 'residencetime', 'id_born']
@@ -325,14 +63,12 @@ class Istruzioni_generali_online(Page):
         self.player.starttime_questionnaire = timezone.now() + timezone.timedelta(hours=2)
         self.player.starttime_task1 = timezone.now() + timezone.timedelta(hours=2)
 
-
 class Task1_instructions_online(Page):
 
     def before_next_page(self):
         self.player.init_var()
 
 class Task1_A_online(Page):
-
     form_model = models.Player
     form_fields = ['dec_dg1']
 
@@ -353,7 +89,6 @@ class Task1_A_online(Page):
         self.player.def_po_pdg1()
 
 class Task1_B_online(Page):
-
     form_model = models.Player
     form_fields = ['dec_dg2']
 
@@ -613,7 +348,11 @@ class PostSurvey3c_online(Page):
 
 class Picknumber_online(Page):
     form_model = models.Player
-    form_fields = ['picknumber']
+    form_fields = ['dec_picknumber']
+
+ def picknumber_error_message(self, value):
+        if not (value < 1 and value % 10):
+            return 'You must pick a number between 1-10'
 
 class Payoff_overview_online(Page):
     pass
