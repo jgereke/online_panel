@@ -16,7 +16,7 @@ text-align: center;
 
 
 {% block title %}
- Riassunto attività individuali
+ Riassunto attività
 {% endblock %}
 
 
@@ -28,15 +28,15 @@ text-align: center;
 <p> Le tue decisioni e potenziali guadagni nelle attività individuali sono le seguenti: </p>
  <table class="table-condensed table-hover" style=" margin-top:0px; text-align: left;">
      <tr><td><b> Attività </b></td> <td><b> La tua decisione </b> </td> <td> <b> Il tuo guadagno sarebbe </b></td> <td><b>Numero di riferimento per il tuo guadagno</b></td> </tr>
-     <tr><td> 1A </td> <td> Hai tenuto {{ player.dec_dg1 }}punti.</td> <td> {{ player.po_dg1 }} </td> <td><b> 1 </b></td></tr>
-     <tr><td> 1B </td> <td> Hai tenuto {{ player.dec_dg2 }}punti.</td> <td> {{ player.po_dg2}} </td> <td><b> 2 </b></td></tr>
+     <tr><td> 1A </td> <td> Hai tenuto {{ player.dec_dg1 }} punti.</td> <td> {{ player.po_dg1 }} </td> <td><b> 1 </b></td></tr>
+     <tr><td> 1B </td> <td> Hai tenuto {{ player.dec_dg2 }} punti.</td> <td> {{ player.po_dg2}} </td> <td><b> 2 </b></td></tr>
      <tr><td> 2  </td> <td> Hai scelto di {{ player.dec_svoc }}.</td> <td> {{ player.po_svoc }} </td> <td> <b>3</b> </td></tr>
      <tr><td> 3A </td> <td> Hai scelto di {{ player.dec_svonc }}.</td> <td> {{ player.po_svonc }} </td> <td><b> 4 </b></td></tr>
      <tr><td> 3B  </td> <td> Hai risposto che l'altro partecipante avrebbe deciso di {{ player.dec_pdguess }}.</td> <td> {{ player.po_pdguess }} </td> <td> <b>5 </b></td></tr>
      <tr><td> 3C </td> <td> Hai scelto di {{ player.dec_pd1 }}.</td> <td> {{ player.po_pd1 }} </td> <td><b> 6 </b></td></tr>
      <tr><td> 3D </td> <td> Hai scelto di {{ player.dec_pd2 }}.</td> <td> {{ player.po_pd2 }} </td> <td><b> 7 </b></td></tr>
-     <tr><td> 3E </td> <td> Hai inviato {{ player.dec_trustjob }}punti.</td> <td> {{ player.po_trustjob }} </td> <td><b> 8 </b></td></tr>
-     <tr><td> 4  </td> <td> Hai inviato {{ player.dec_trustactivity }}punti.</td> <td> {{ player.po_trustact }} </td> <td><b> 9</b> </td></tr>
+     <tr><td> 4A </td> <td> Hai inviato {{ player.dec_trustjob }}punti.</td> <td> {{ player.po_trustjob }} </td> <td><b> 8 </b></td></tr>
+     <tr><td> 4B  </td> <td> Hai inviato {{ player.dec_trustactivity }}punti.</td> <td> {{ player.po_trustact }} </td> <td><b> 9</b> </td></tr>
      <tr><td> 5   </td> <td> Hai scelto {{ player.dec_threat }}.</td> <td> {{ player.po_threat }} </td> <td><b> 10</b> </td></tr>
 </table>
 
