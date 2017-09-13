@@ -7,21 +7,21 @@ staticfiles
 _coverage_results
 _static_root
 
-interact_individual_tasks/__pycache__/__init__.cpython-35.pyc
+interact_online_tasks/__pycache__/__init__.cpython-35.pyc
 
 *.pyc
 
-interact_individual_tasks/__pycache__/__init__.cpython-35.pyc
+interact_online_tasks/__pycache__/__init__.cpython-35.pyc
 
-interact_individual_tasks/__pycache__/models.cpython-35.pyc
+interact_online_tasks/__pycache__/models.cpython-35.pyc
 
-interact_individual_tasks/__pycache__/views.cpython-35.pyc
+interact_online_tasks/__pycache__/views.cpython-35.pyc
 
-interact_individual_tasks/_builtin/__pycache__/__init__.cpython-35.pyc
+interact_online_tasks/_builtin/__pycache__/__init__.cpython-35.pyc
 
 db.sqlite3
 
-interact_individual_tasks/__pycache__/__init__.cpython-35.pyc
+interact_online_tasks/__pycache__/__init__.cpython-35.pyc
 
 *.pyc
 
