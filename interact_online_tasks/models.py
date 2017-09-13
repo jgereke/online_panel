@@ -142,19 +142,7 @@ class Player(BasePlayer):
 
     quartiere = models.CharField()
 
-    remain_in_milan = models.PositiveIntegerField(choices=[
-        [1,'Per sempre'],
-        [2,'Per i prossimi 5-10 anni'],
-        [3,'Per meno di 5 anni'],
-        ],
-    )
-
-
-    region = models.CharField()
-
-    country = models.CharField()
-
-    time_in_italy = models.PositiveIntegerField(choices=[
+    residencetime = models.PositiveIntegerField(choices=[
         [1, 'meno di un anno'],
         [2, 'tra 1-3 anni'],
         [3, '4-10 anni'],
@@ -162,24 +150,10 @@ class Player(BasePlayer):
         [5, '16-20 anni'],
         [6, '21 anni o più'],
         ],
-    )
-    #predefining answers?
+        )
 
-    citizenship = models.PositiveIntegerField(choices=[
-        [1,'No'],
-        [2,'Si'],
-    ],
-    )
 
-    language = models.CharField()
-
-    italian_knowledge = models.PositiveIntegerField(choices=[
-        [1,'Molto bene'],
-        [2,'Abbastanza bene'],
-        [3,'Non conosco bene'],
-        [4,'Non conosco per nulla'],
-        ],
-    )
+    region = models.CharField()
 
     married = models.PositiveIntegerField(choices=[
        [1,'Single'],

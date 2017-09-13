@@ -8,11 +8,9 @@ Questionario 1
 {% block content %}
 
 <ul style="list-style-type:disc">
-<li> Da quanti anni vivi a Milano? {% formfield player.years_in_milan with label="" %} </li>
+<li> In quale città vivi? {% formfield player.city with label="" %} </li>
 
-<li> In quale quartiere di Milano vivi? {% formfield player.quartiere with label="" %} </li>
-
-<li> Per quanti anni pensi di rimanere a vivere a Milano? {% formfield player.remain_in_milan with label="" %} </li>
+<li> Da quanto tempo vivi in questa città? {% formfield player.residencetime with label="" %} </li>
 
 <li> Dove sei nato/a? {% formfield player.id_born with label="" %} </li>
 
