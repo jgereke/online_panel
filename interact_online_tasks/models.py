@@ -138,9 +138,7 @@ class Player(BasePlayer):
     )
 
     #Pre Survey Questions
-    years_in_milan = models.PositiveIntegerField()
-
-    quartiere = models.CharField()
+    city = models.CharField()
 
     residencetime = models.PositiveIntegerField(choices=[
         [1, 'meno di un anno'],
