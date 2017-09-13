@@ -269,7 +269,7 @@ class Payoff_overview(Page):
 #         return False
 
 
-class PreSurvey_online(Page):
+class PreSurvey1_online(Page):
     form_model = models.Player
     form_fields = ['city', 'residencetime', 'id_born']
 
@@ -282,7 +282,7 @@ class PreSurvey_online(Page):
         self.player.permanent_var()
 
 
-class PreSurvey0_online(Page):
+class PreSurvey1b_online(Page):
     form_model = models.Player
     form_fields = ['region']
 
@@ -621,9 +621,8 @@ page_sequence = [
     Benvenuta_online,
     Istruzioni_generali_online,
     Informed_consent_online,
-    PreSurvey_online,
-    PreSurvey0_online,
     PreSurvey1_online,
+    PreSurvey1b_online,
     PreSurvey2_online,
     PreSurvey3_online,
     Task1_instructions_online,
