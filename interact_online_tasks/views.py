@@ -612,7 +612,8 @@ class PostSurvey3c_online(Page):
                    ]
 
 class Picknumber_online(Page):
-    pass
+    form_model = models.Player
+    form_fields = ['picknumber']
 
 class Payoff_overview_online(Page):
     pass
