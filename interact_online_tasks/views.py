@@ -271,12 +271,11 @@ class Payoff_overview(Page):
 
 class PreSurvey_online(Page):
     form_model = models.Player
-    form_fields = ['years_in_milan','quartiere', 'remain_in_milan', 'id_born', 'region']
+    form_fields = ['city', 'residencetime', 'id_born']
 
     def get_form_fields(self):
-        return ["years_in_milan",
-                "quartiere",
-                "remain_in_milan",
+        return ["city",
+                "residencetime",
                 "id_born"]
 
     def before_next_page(self):
@@ -294,24 +293,9 @@ class PreSurvey0_online(Page):
     def is_displayed(self):
         return self.participant.vars['id_born'] == 2
 
-class PreSurvey1_online(Page):
-    form_model = models.Player
-    form_fields = ['country', 'time_in_onlinealy', 'citizenship', 'language', 'italian_knowledge']
-
-    def is_displayed(self):
-        return self.participant.vars['id_born'] == 3
-
-    def get_form_fields(self):
-        return ["country",
-                "time_in_onlinealy",
-                "citizenship",
-                "language",
-                "italian_knowledge",
-                ]
-
 class PreSurvey2_online(Page):
     form_model = models.Player
-    form_fields = ['married','children', 'household']
+    form_fields = ['married', 'household', 'children']
 
     def get_form_fields(self):
         return ["married",

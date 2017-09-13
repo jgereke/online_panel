@@ -8,21 +8,41 @@ Questionario 1
 {% block content %}
 
 <ul style="list-style-type:disc">
-<li>  In quale nazione sei nato/a?  {% formfield player.country with label="" %} </li>
+<li> Da quanti anni vivi a Milano? {% formfield player.years_in_milan with label="" %} </li>
 
-<li>  Da quanti anni vivi in Italia? {% formfield player.time_in_italy with label="" %} </li>
+<li> In quale quartiere di Milano vivi? {% formfield player.quartiere with label="" %} </li>
 
-<li>  Hai la cittadinanza Italiana?  {% formfield player.citizenship with label="" %} </li>
+<li> Per quanti anni pensi di rimanere a vivere a Milano? {% formfield player.remain_in_milan with label="" %} </li>
 
-<li>  Quale lingua parli prevalentemente a casa? {% formfield player.language with label="" %} </li>
+<li> Dove sei nato/a? {% formfield player.id_born with label="" %} </li>
 
-<li>  Conosci bene la lingua italiana? {% formfield player.italian_knowledge with label="" %}  </li>
 </ul>
 
-
 <p><br></p>
-
     {% next_button %}
 <p><br></p>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+
+$(function() {
+  if($( "#id_born" ).val()==2){
+    $( "#id_region" ).show();
+  }else{
+    $( "#id_region" ).hide();
+  }
+  $( "#id_born" ).change(function() {
+      if($( "#id_born" ).val()==2){
+        $( "#id_region" ).show();
+      }else{
+        $( "#id_region" ).hide();
+      }
+  });
+});
+
+</script>
 
 {% endblock %}
