@@ -350,7 +350,7 @@ class Picknumber_online(Page):
     form_model = models.Player
     form_fields = ['dec_picknumber']
 
- def picknumber_error_message(self, value):
+    def picknumber_error_message(self, value):
         if not (value < 1 and value % 10):
             return 'You must pick a number between 1-10'
 
