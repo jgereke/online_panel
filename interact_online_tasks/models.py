@@ -523,4 +523,4 @@ class Player(BasePlayer):
         self.participant.vars['employimm'] = self.employimm
         self.participant.vars['employimmnationality'] = self.employimmnationality
         self.participant.vars['colleagues'] = self.colleagues
-        self.participant.vars['dec_picknumber'] = self.picknumber
+        self.participant.vars['dec_picknumber'] = self.dec_picknumber
