@@ -357,7 +357,7 @@ class Player(BasePlayer):
     dec_trustcheckact = models.PositiveIntegerField(min=0 )
     dec_trustestimact = models.PositiveIntegerField(min= 0)
     dec_threat = models.CharField(choices=['Protetto', 'Non protetto'], widget=widgets.RadioSelect())
-
+    dec_picknumber = models.PositiveIntegerField(min=0, max=10)
 
     #Payoff
     po_dg1 = models.CurrencyField()
@@ -499,8 +499,9 @@ class Player(BasePlayer):
         self.participant.vars['po_infosell'] = self.po_infosell
         self.participant.vars['dec_infobuy'] = self.dec_infobuy
         self.participant.vars['po_infobuy'] = self.po_infobuy
-        self.participant.vars['quartiere'] = self.quartiere
-        #self.participant.vars['born'] = self.born
+        self.participant.vars['city'] = self.city
+        self.participant.vars['residencetime'] = self.residencetime
+        self.participant.vars['born'] = self.born
         self.participant.vars['married'] = self.married
         self.participant.vars['children'] = self.children
         self.participant.vars['household'] = self.household
@@ -522,3 +523,4 @@ class Player(BasePlayer):
         self.participant.vars['employimm'] = self.employimm
         self.participant.vars['employimmnationality'] = self.employimmnationality
         self.participant.vars['colleagues'] = self.colleagues
+        self.participant.vars['dec_picknumber'] = self.picknumber

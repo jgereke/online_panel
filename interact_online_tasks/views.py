@@ -611,6 +611,9 @@ class PostSurvey3c_online(Page):
           return ["employimmnationality",
                    ]
 
+class Picknumber_online(Page):
+    pass
+
 class Payoff_overview_online(Page):
     pass
 
@@ -649,5 +652,6 @@ page_sequence = [
     PostSurvey3a_online,
     PostSurvey3b_online,
     PostSurvey3c_online,
+    Picknumber_online,
     Payoff_overview_online
 ]
